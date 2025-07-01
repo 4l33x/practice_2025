@@ -1,0 +1,14 @@
+.table{
+    width: 250px;
+    align-content: center;
+    text-align: center;
+}
+
+.cube{
+    margin-left: 75px;
+    width: 100px;
+    height: 100px;
+    background-color: greenyellow;
+    border: 3px solid gray;
+    border-radius: 10px;
+}
