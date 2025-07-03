@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=63b2c492-8fd3-44a4-9518-6fa3c81f7c45&lang=ru_RU" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="container">
+            <input id="names" class="input" placeholder="ФИО">
+            <input id="phone" class="input" placeholder="Телефон">
+            <input id="email" class="input" placeholder="Email">
+            <div id="map" style="width:498px; height: 350px"></div>
+            <textarea id="comment" class="input" placeholder="Комментарий к заказу (макс. 500 символов)"></textarea>
+            <button id="send">Отправить</button>
+            <div id="error"></div>
+            <script src="script.js"></script>
+        </div>
+    </body>
+</html>
