@@ -12,7 +12,7 @@ app.get('/products', async (req, res) => {
             'Accept': 'application/json'
         }
     });
-    console.log(req.headers);
+    //console.log(req.headers);
     const rawText = await serverResponce.text()
     try {
         res.json(JSON.parse(rawText));

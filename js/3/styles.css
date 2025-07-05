@@ -1,0 +1,38 @@
+.container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    line-height: 1.2;
+}
+
+input {
+    width: 75px;
+}
+
+p{
+    margin: 5px;
+    padding: 0px;
+    gap: 5px;
+}
+
+table{
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px black solid;
+    text-align: left;
+}
+
+thead{
+    background-color: lightgray;
+}
+
+th, td{
+    padding: 8px;
+}
+
+tr {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
