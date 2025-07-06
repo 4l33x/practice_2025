@@ -1,6 +1,6 @@
 function saveTable() {
     localStorage.clear();
-    
+
     const rows = document.querySelectorAll("tbody tr");
 
     let i = 0, j = 0;
@@ -67,6 +67,14 @@ function lock_input() {
                 this.blur();
             }
         })
+
+        input.addEventListener("click", function (e) {
+            if ('ontouchstart' in window) {
+                this.readOnly = "";
+                this.focus();
+                clicked = true;
+            }
+        })
     });
 }
 
@@ -97,7 +105,10 @@ function deleteRow() {
     let row = rows[rows.length - 1]
     let asked = false;
 
-    Array.from(row.cells).forEach(cell => {
+    const cells = Array.from(row.cells);
+
+    for (let i = 0; i < cells.length; i++){
+        let cell = cells[i];
         let value = cell.querySelector("input").value;
         if (value != "" && !asked) {
             asked = true;
@@ -105,7 +116,7 @@ function deleteRow() {
             if (!result) return;
         }
         cell.querySelector("input").value = "";
-    });
+    };
     
     rows[rows.length - 1].remove();
     adjustButtons();
@@ -125,16 +136,20 @@ function deleteCol() {
 
     let asked = false;
 
-    rows.forEach(row => {
+    for (let i = 0; i < rows.length; i++){
+        let row = rows[i];
         if (row.cells.length == 1) return;
         if (row.cells[row.cells.length - 1].querySelector("input").value != "" && !asked) {
             asked = true;
             let result = confirm("В столбце находятся данные.\nВы уврены, что хотите его удалить?");
             if (!result) return;
         }
+    };
+    for (let i = 0; i < rows.length; i++){
+        let row = rows[i];
         row.cells[row.cells.length - 1].querySelector("input").value = "";
         row.cells[row.cells.length - 1].remove();
-    });
+    }
 }
 
 row_plus.onclick = function () {
