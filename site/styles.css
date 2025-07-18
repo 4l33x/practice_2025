@@ -23,6 +23,10 @@
     src: url("resources/FONTS/fontawesome/fontawesome-free-6.7.2-web/webfonts/fa-brands-400.ttf");
 }
 
+*{
+    -webkit-tap-highlight-color: transparent;
+}
+
 .logo{
     font-family: "Ubuntu";
     font-size: 2.2rem;
@@ -32,13 +36,25 @@
 ul{
     list-style: none;
     display: flex;
-    gap: 9vw;
+    gap: 7vw;
 }
 
 li{
     font-family: "Playfair";
     color: rgb(99, 99, 99);
     font-size: 1.1rem;
+    padding: 2vh;
+    border: 2px solid transparent; 
+    transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+li:hover{
+    color: rgb(140, 140, 140);
+    border-color: rgb(140, 140, 140);
+}
+
+li:active{
+    transform: scale(0.95);
 }
 
 a{
@@ -49,7 +65,8 @@ a{
 header{
     display: flex;
     justify-content: space-between;
-    margin: 5vw;
+    align-items: center;
+    margin: 4vw;
 }
 
 .landscape-box{
@@ -90,6 +107,15 @@ p{
 .comment{
     margin-top: 4vw;
     margin-bottom: 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.comment:hover{
+    color: rgb(220, 220, 220);
+}
+
+.comment:active{
+    transform: scale(0.99);
 }
 
 .posts{
@@ -102,6 +128,15 @@ p{
 
 .post{
     width: 36vw;
+    transition: transform 0.3s ease;
+}
+
+.post:hover{
+    transform: translateY(-10px);
+}
+
+.post:active{
+    transform: scale(0.97);
 }
 
 .post-img{
@@ -163,6 +198,16 @@ button{
     padding-right: 40px;
     font-size: 1.5rem;
     margin-bottom: 20vh;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.load-button:hover{
+    background-color: rgb(249, 249, 249);
+    transform: translateY(-10px);
+}
+
+.load-button:active{
+    transform: scale(0.97);
 }
 
 footer{
@@ -209,6 +254,7 @@ footer{
 @media(orientation: portrait){
     header{
         flex-direction: column;
+        align-items: start;
     }
 
     ul{
@@ -218,6 +264,11 @@ footer{
         margin-bottom: 2vh;
         gap: 0;
         flex-direction: column;
+    }
+    
+    li{
+        padding: 0;
+        border: none;
     }
 
     .posts{
@@ -236,7 +287,8 @@ footer{
         justify-content: left;
         align-items: start;
         gap: 1vh;
-        padding-top: 2vh;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
     }
 
     .footer-left{
